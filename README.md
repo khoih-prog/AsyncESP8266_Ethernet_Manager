@@ -689,7 +689,7 @@ AsyncESP8266_Ethernet_manager.setSTAStaticIPConfig(WM_STA_IPconfig);
 ...
 
 #if USING_CORS_FEATURE
-  ESP_wifiManager.setCORSHeader("Your Access-Control-Allow-Origin");
+  AsyncESP8266_Ethernet_manager.setCORSHeader("Your Access-Control-Allow-Origin");
 #endif
 ```
 
@@ -818,7 +818,7 @@ void printLocalTime()
 AsyncWebServer webServer(HTTP_PORT);
 AsyncDNSServer dnsServer;
 
-AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_Manager(&webServer, &dnsServer);
+AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_manager(&webServer, &dnsServer);
 ```
 
 If you'd like to have a personalized hostname 
@@ -827,7 +827,7 @@ If you'd like to have a personalized hostname
 add
 
 ```cpp
-AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_Manager(&webServer, &dnsServer, "Personalized-HostName");
+AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_manager(&webServer, &dnsServer, "Personalized-HostName");
 ```
 
 then later call
@@ -900,7 +900,7 @@ void loop()
     digitalWrite(LED_BUILTIN, LED_ON); // turn the LED on by making the voltage LOW to tell us we are in configuration mode.
 
     //Local initialization. Once its business is done, there is no need to keep it around
-    AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_Manager(&webServer, &dnsServer, "ConfigOnSwitchFS");
+    AsyncESP8266_Ethernet_Manager AsyncESP8266_Ethernet_manager(&webServer, &dnsServer, "ConfigOnSwitchFS");
 
     //Check if there is stored WiFi router/password credentials.
     //If not found, device will remain in configuration mode until switched off via webserver.
