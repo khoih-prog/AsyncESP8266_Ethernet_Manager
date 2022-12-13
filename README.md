@@ -1676,9 +1676,10 @@ Just add the bit you want added as the last parameter to the custom parameter co
 ESPAsync_EMParameter custom_mqtt_server("server", "mqtt server", "iot.eclipse", 40, " readonly");
 ```
 
+---
+---
 
-
-#### How to connect W5x00 or ENC28J60 to ESP8266
+### How to connect W5x00 or ENC28J60 to ESP8266
 
 You can change the `CS/SS` pin to another one. Default is `GPIO16`
 
